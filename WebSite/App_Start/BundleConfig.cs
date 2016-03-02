@@ -1,43 +1,45 @@
-﻿using System.Web;
+﻿#region
+
 using System.Web.Optimization;
+
+#endregion
 
 namespace WebSite
 {
     public class BundleConfig
     {
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
-        public static void RegisterBundles(BundleCollection bundles)
+        public static void RegisterBundles( BundleCollection bundles )
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                "~/Scripts/jquery.validate*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js",
-                      "~/Scripts/html5shiv.js",
-                      "~/Scripts/jquery.isotope.min.js",
-                      "~/Scripts/jquery.prettyPhoto.js",
-                      "~/Scripts/respond.min.js",
-                      "~/Scripts/wow.min.js"));
+                "~/Scripts/bootstrap.js",
+                "~/Scripts/respond.js",
+                "~/Scripts/html5shiv.js",
+                "~/Scripts/jquery.isotope.min.js",
+                "~/Scripts/jquery.prettyPhoto.js",
+                "~/Scripts/respond.min.js",
+                "~/Scripts/wow.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/animate.min.css",
-                      "~/Content/font-awesome.css",
-                      "~/Content/responsive.css" ,
-                      "~/Content/bootstrap.min.css",
-                      "~/Content/animate.min.css",
-                      "~/Content/font-awesome.min.css",
-                      "~/Content/prettyPhoto.css"));
+                //"~/Content/css/bootstrap.css",
+                "~/Content/css/bootstrap.min.css",
+                "~/Content/css/font-awesome.css",
+                "~/Content/css/responsive.css",
+                "~/Content/css/animate.min.css",
+                "~/Content/css/prettyPhoto.css",
+                "~/Content/css/main.css"));
+                //"~/Content/site.css"
         }
     }
 }
