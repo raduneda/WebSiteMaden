@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿#region
+
+using System;
 using System.Web.Mvc;
+
+#endregion
 
 namespace WebSite.Controllers
 {
@@ -13,38 +14,24 @@ namespace WebSite.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult ContactUs()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return RedirectToAction("Index", "ContactUs");
         }
 
         public ActionResult AboutUs()
         {
-            throw new NotImplementedException();
+            return RedirectToAction("Index", "AboutUs");
         }
 
         public ActionResult Services()
         {
-            throw new NotImplementedException();
-        }
-
-        public ActionResult Portfolio()
-        {
-            throw new NotImplementedException();
+            return RedirectToAction("Index", "Services");
         }
 
         public ActionResult BlogItem()
         {
-            throw new NotImplementedException();
+            return RedirectToAction("BlogItem", "Blog");
         }
 
         public ActionResult FourOFour()
@@ -64,8 +51,7 @@ namespace WebSite.Controllers
 
         public ActionResult Blog()
         {
-            throw new NotImplementedException();
+            return RedirectToAction("Index", "Blog");
         }
-
     }
 }
