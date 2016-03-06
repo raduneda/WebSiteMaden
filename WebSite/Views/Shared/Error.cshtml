@@ -3,7 +3,11 @@
 @{
     ViewBag.Title = "Error";
 }
-
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+@section BodyClass {
+    <section id="error" class="container text-center">
+        <h1>404, Page not found</h1>
+        <p>The Page you are looking for doesn't exist or an other error occurred.</p>
+        @Html.ActionLink("Return To Homepage", "Index", "HomeController", new { @class = "btn btn-primary" })
+    </section><!--/#error-->
+}
 

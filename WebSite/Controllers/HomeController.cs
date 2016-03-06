@@ -36,7 +36,7 @@ namespace WebSite.Controllers
 
         public ActionResult FourOFour()
         {
-            throw new NotImplementedException();
+            return View("Error");
         }
 
         public ActionResult Shortcodes()
