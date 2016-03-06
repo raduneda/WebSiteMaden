@@ -39,14 +39,9 @@ namespace WebSite.Controllers
             return View("Error");
         }
 
-        public ActionResult Shortcodes()
-        {
-            throw new NotImplementedException();
-        }
-
         public ActionResult Pricing()
         {
-            throw new NotImplementedException();
+            return RedirectToAction("Index","Pricing");
         }
 
         public ActionResult Blog()
