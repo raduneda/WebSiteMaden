@@ -173,6 +173,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PortfolioViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -237,6 +238,10 @@
     <Content Include="Content\Images\partners\partner4.png" />
     <Content Include="Content\Images\partners\partner5.png" />
     <Content Include="Content\Images\partners\partner_bg.png" />
+    <Content Include="Content\Images\portfolio\creative\item1.png" />
+    <Content Include="Content\Images\portfolio\creative\item10.png" />
+    <Content Include="Content\Images\portfolio\creative\item11.png" />
+    <Content Include="Content\Images\portfolio\creative\item12.png" />
     <Content Include="Content\Images\portfolio\full\item1.png" />
     <Content Include="Content\Images\portfolio\full\item10.png" />
     <Content Include="Content\Images\portfolio\full\item11.png" />
@@ -261,6 +266,10 @@
     <Content Include="Content\Images\portfolio\recent\item7.png" />
     <Content Include="Content\Images\portfolio\recent\item8.png" />
     <Content Include="Content\Images\portfolio\recent\item9.png" />
+    <Content Include="Content\Images\portfolio\standard\item6.png" />
+    <Content Include="Content\Images\portfolio\standard\item7.png" />
+    <Content Include="Content\Images\portfolio\standard\item8.png" />
+    <Content Include="Content\Images\portfolio\standard\item9.png" />
     <Content Include="Content\Images\prettyPhoto\dark_rounded\btnNext.png" />
     <Content Include="Content\Images\prettyPhoto\dark_rounded\btnPrevious.png" />
     <Content Include="Content\Images\prettyPhoto\dark_rounded\contentPattern.png" />
@@ -395,6 +404,7 @@
     <Content Include="Views\Blog\Blog.cshtml" />
     <Content Include="Views\ContactUs\ContactUs.cshtml" />
     <Content Include="Views\Pricing\Pricing.cshtml" />
+    <Content Include="Views\Portfolio\PhotoListView.cshtml" />
     <None Include="Views\Portfolio\Portfolio.cshtml" />
     <None Include="Views\Services\Services.cshtml" />
   </ItemGroup>
@@ -407,6 +417,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{7FD1A422-5FCD-4A41-B474-50A30EF87272}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TL\TL.csproj">
+      <Project>{b1f5c338-486a-428b-893c-01f84f3d9782}</Project>
+      <Name>TL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

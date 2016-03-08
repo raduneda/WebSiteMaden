@@ -1,0 +1,21 @@
+﻿@using TL
+@model WebSite.Models.PortfolioViewModel
+
+@{
+    ViewBag.Title = "PortfolioTest";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@section BodyClass {
+    <table>
+        @foreach (PhotoDto item in Model.PhotoList)
+        {
+            <tr>
+                <td>
+                    <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.ByteArray))" alt="@item.Name" />
+                </td>
+            </tr>
+        }
+    </table>
+}
+
