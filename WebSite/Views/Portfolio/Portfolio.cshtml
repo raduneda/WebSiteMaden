@@ -29,25 +29,49 @@
                 </li>
             </ul><!--/#portfolio-filter-->
             <div class="row">
-                @foreach ( var item in Model.PhotoList )
+                <div class="portfolio-items">
+                @foreach (var item in Model.PhotoList)
                 {
-                    <div class="portfolio-items">
-                        <div class="portfolio-item joomla bootstrap col-xs-12 col-sm-4 col-md-3">
-                            <div class="recent-work-wrap">
-                                <img class="img-responsive" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.ByteArray))" alt="@item.Name">
-                                <div class="overlay">
-                                    <div class="recent-work-inner">
-                                        <h3>
-                                            <a href="#">Business theme</a>
-                                        </h3>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                        <a class="preview" href="@Url.Content("~/Content/Images/portfolio/full/item1.png")" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                    </div>
+
+                    var divClasses = new string[3];
+                    divClasses[0] = "portfolio-item";
+                    divClasses[2] = "col-xs-12 col-sm-4 col-md-3";
+
+                    if (item.Name.Contains("1"))
+                    {
+                        divClasses[1] = "bootstrap";
+                    }
+                    else if (item.Name.Contains("2"))
+                    {
+                        divClasses[1] = "html";
+                    }
+                    else
+                    {
+                        divClasses[1] = "wordpress";
+                    }
+
+                    <div class="@string.Join(" ",divClasses) ">
+                        <div class="recent-work-wrap">
+                            <img class="img-responsive" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.ByteArray))" alt="@item.Name">
+                            <div class="overlay">
+                                <div class="recent-work-inner">
+                                    <h3>
+                                        <a href="#">Business theme</a>
+                                    </h3>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                                    <a class="preview" href="@Url.Content("~/Content/Images/portfolio/full/item1.png")" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                                 </div>
                             </div>
-                        </div><!--/.portfolio-item-->
+                        </div>
                     </div>
+
+
+                        @*<div class="portfolio-item bootstrap col-xs-12 col-sm-4 col-md-3">
+
+                            
+                        </div>*@<!--/.portfolio-item-->
                 }
+               </div>
             </div>
         </div>
     </section><!--/#portfolio-item-->
