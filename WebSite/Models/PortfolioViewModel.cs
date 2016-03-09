@@ -9,5 +9,7 @@ namespace WebSite.Models
     public class PortfolioViewModel
     {
         public List<PhotoDto> PhotoList { get; set; }
+
+        public Array PhotoTypes { get; set; }
     }
 }

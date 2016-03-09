@@ -1,7 +1,10 @@
 ﻿#region
 
+using System;
 using System.Web.Mvc;
 using BL;
+using TL;
+using TL.Enums;
 using WebSite.Models;
 
 #endregion
@@ -26,20 +29,11 @@ namespace WebSite.Controllers
         {
             PortfolioViewModel viewModel = new PortfolioViewModel
             {
-                PhotoList = _photoManager.GetPortfolioImages(PhotoManager.PortfolioImageType.All)
+                PhotoList = _photoManager.GetPortfolioImages(PhotoEnum.PortfolioImageType.All),
+                PhotoTypes = new[] { PhotoEnum.PortfolioImageType.Creative, PhotoEnum.PortfolioImageType.Standard }          
             };
 
             return View("~/Views/Portfolio/Portfolio.cshtml", viewModel);
-        }
-
-        public ActionResult Test()
-        {
-            PortfolioViewModel viewModel = new PortfolioViewModel
-            {
-                PhotoList = _photoManager.GetPortfolioImages(PhotoManager.PortfolioImageType.All)
-            };
-
-            return View("~/Views/Portfolio/PhotoListView.cshtml", viewModel);
         }
     }
 }

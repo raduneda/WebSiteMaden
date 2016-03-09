@@ -18,15 +18,12 @@
                 <li>
                     <a class="btn btn-default active" href="#" data-filter="*">All Works</a>
                 </li>
+            @foreach (var item in Model.PhotoTypes)
+            {
                 <li>
-                    <a class="btn btn-default" href="#" data-filter=".bootstrap">Creative</a>
+                    <a class="btn btn-default" href="#" data-filter=".@item">@item</a>
                 </li>
-                <li>
-                    <a class="btn btn-default" href="#" data-filter=".html">Photography</a>
-                </li>
-                <li>
-                    <a class="btn btn-default" href="#" data-filter=".wordpress">Web Development</a>
-                </li>
+            }
             </ul><!--/#portfolio-filter-->
             <div class="row">
                 <div class="portfolio-items">
@@ -36,19 +33,7 @@
                     var divClasses = new string[3];
                     divClasses[0] = "portfolio-item";
                     divClasses[2] = "col-xs-12 col-sm-4 col-md-3";
-
-                    if (item.Name.Contains("1"))
-                    {
-                        divClasses[1] = "bootstrap";
-                    }
-                    else if (item.Name.Contains("2"))
-                    {
-                        divClasses[1] = "html";
-                    }
-                    else
-                    {
-                        divClasses[1] = "wordpress";
-                    }
+                    divClasses[1] = item.Type.ToString();
 
                     <div class="@string.Join(" ",divClasses) ">
                         <div class="recent-work-wrap">
@@ -64,12 +49,6 @@
                             </div>
                         </div>
                     </div>
-
-
-                        @*<div class="portfolio-item bootstrap col-xs-12 col-sm-4 col-md-3">
-
-                            
-                        </div>*@<!--/.portfolio-item-->
                 }
                </div>
             </div>

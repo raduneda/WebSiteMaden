@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region
+
+using TL.Enums;
+
+#endregion
 
 namespace TL
 {
@@ -11,5 +11,6 @@ namespace TL
         public string Path { get; set; }
         public string Name { get; set; }
         public byte[] ByteArray { get; set; }
+        public PhotoEnum.PortfolioImageType Type { get; set; }
     }
 }
