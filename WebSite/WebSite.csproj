@@ -400,13 +400,13 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <None Include="Views\AboutUs\AboutUs.cshtml" />
-    <Content Include="Views\Blog\Blog.cshtml" />
-    <Content Include="Views\ContactUs\ContactUs.cshtml" />
-    <Content Include="Views\Pricing\Pricing.cshtml" />
+    <None Include="Views\AboutUs\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\ContactUs\Index.cshtml" />
+    <Content Include="Views\Pricing\Index.cshtml" />
     <Content Include="Views\Portfolio\PhotoListView.cshtml" />
-    <None Include="Views\Portfolio\Portfolio.cshtml" />
-    <None Include="Views\Services\Services.cshtml" />
+    <None Include="Views\Portfolio\Index.cshtml" />
+    <None Include="Views\Services\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

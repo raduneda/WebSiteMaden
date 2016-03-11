@@ -11,7 +11,7 @@ namespace WebSite.Controllers
         // GET: Services
         public ActionResult Index()
         {
-            return View("~/Views/Services/Services.cshtml");
+            return View("~/Views/Services/Index.cshtml");
         }
     }
 }

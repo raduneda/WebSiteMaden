@@ -11,7 +11,7 @@ namespace WebSite.Controllers
         // GET: ContactUs
         public ActionResult Index()
         {
-            return View("~/Views/ContactUs/ContactUs.cshtml");
+            return View("~/Views/ContactUs/Index.cshtml");
         }
 
         public ActionResult SendMail()

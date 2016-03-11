@@ -11,7 +11,7 @@ namespace WebSite.Controllers
         // GET: AboutUs
         public ActionResult Index()
         {
-            return View("~/Views/Blog/Blog.cshtml");
+            return View("~/Views/Blog/Index.cshtml");
         }
 
         public ActionResult BlogItemComments()

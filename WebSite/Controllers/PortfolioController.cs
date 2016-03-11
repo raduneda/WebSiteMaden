@@ -33,7 +33,7 @@ namespace WebSite.Controllers
                 PhotoTypes = new[] { PhotoEnum.PortfolioImageType.Creative, PhotoEnum.PortfolioImageType.Standard }          
             };
 
-            return View("~/Views/Portfolio/Portfolio.cshtml", viewModel);
+            return View("~/Views/Portfolio/Index.cshtml", viewModel);
         }
     }
 }
