@@ -12,5 +12,6 @@ namespace TL
         public string Name { get; set; }
         public byte[] ByteArray { get; set; }
         public PhotoEnum.PortfolioImageType Type { get; set; }
+        public string ImagePath { get; set;} 
     }
 }

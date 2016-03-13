@@ -1,7 +1,8 @@
 ﻿#region
 
-using System;
 using System.Web.Mvc;
+using BL;
+using WebSite.Models;
 
 #endregion
 
@@ -9,9 +10,21 @@ namespace WebSite.Controllers
 {
     public class HomeController : Controller
     {
+        private CarouselManager _carouselManager;
+
+        public HomeController() : this(null)
+        {
+        }
+
+        public HomeController( CarouselManager carouselManager )
+        {
+            _carouselManager = carouselManager ?? new CarouselManager();
+        }
+
         public ActionResult Index()
         {
-            return View();
+            HomeViewModel viewModel = new HomeViewModel { CarouselItems = _carouselManager.GetCarouselItems() };
+            return View("~/Views/Home/Index.cshtml", viewModel);
         }
 
         public ActionResult ContactUs()
@@ -41,7 +54,7 @@ namespace WebSite.Controllers
 
         public ActionResult Pricing()
         {
-            return RedirectToAction("Index","Pricing");
+            return RedirectToAction("Index", "Pricing");
         }
 
         public ActionResult Blog()

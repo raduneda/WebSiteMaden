@@ -16,11 +16,16 @@ namespace BL
 
         private PathManager()
         {
+            //string directoryOfImage = HttpContext.Current.Server.MapPath("~/Images/");
             string contentPath = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Content");
             ImagesPath = Path.Combine(contentPath, "images");
             PortfolioPath = Path.Combine(ImagesPath, "portfolio");
             PortfolioCreativePath = Path.Combine(PortfolioPath, "creative");
             PortfolioStandardPath = Path.Combine(PortfolioPath, "standard");
+
+            SliderPath = Path.Combine(ImagesPath, "slider");
+            SliderBackgroundPath = Path.Combine(SliderPath, "background");
+            SliderForegroundPath = Path.Combine(SliderPath, "foreground");
         }
 
         public static PathManager Instance
@@ -32,5 +37,9 @@ namespace BL
         public string PortfolioPath { get; private set; }
         public string PortfolioCreativePath { get; private set; }
         public string PortfolioStandardPath { get; private set; }
+
+        public string SliderPath { get; private set; }
+        public string SliderBackgroundPath { get; private set; }
+        public string SliderForegroundPath { get; private set; }
     }
 }

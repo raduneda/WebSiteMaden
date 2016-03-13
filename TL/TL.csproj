@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\PhotoEnum.cs" />
+    <Compile Include="CarouselDto.cs" />
     <Compile Include="PhotoDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

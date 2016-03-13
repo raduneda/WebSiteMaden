@@ -14,12 +14,9 @@ namespace BL
     {
         private readonly PathManager _pathManager;
 
-        public PhotoManager( IPathManager pathManager = null )
+        public PhotoManager()
         {
-            if ( null == pathManager )
-            {
-                _pathManager = PathManager.Instance;
-            }
+            _pathManager = PathManager.Instance;
         }
 
         public List<PhotoDto> GetPortfolioImages( PhotoEnum.PortfolioImageType imageType )

@@ -173,6 +173,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\PortfolioViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -325,9 +326,15 @@
     <Content Include="Content\Images\service\client3.png" />
     <Content Include="Content\Images\service\image_bg.png" />
     <Content Include="Content\Images\service\logo.png" />
+    <Content Include="Content\Images\slider\background\bg1.jpg" />
+    <Content Include="Content\Images\slider\background\bg2.jpg" />
+    <Content Include="Content\Images\slider\background\bg3.jpg" />
     <Content Include="Content\Images\slider\bg1.jpg" />
     <Content Include="Content\Images\slider\bg2.jpg" />
     <Content Include="Content\Images\slider\bg3.jpg" />
+    <Content Include="Content\Images\slider\foreground\img1.png" />
+    <Content Include="Content\Images\slider\foreground\img2.png" />
+    <Content Include="Content\Images\slider\foreground\img3.png" />
     <Content Include="Content\Images\slider\img1.png" />
     <Content Include="Content\Images\slider\img2.png" />
     <Content Include="Content\Images\slider\img3.png" />

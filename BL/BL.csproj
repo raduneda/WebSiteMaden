@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PathManager.cs" />
+    <Compile Include="CarouselManager.cs" />
     <Compile Include="PhotoManager.cs" />
     <Compile Include="BaseManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
