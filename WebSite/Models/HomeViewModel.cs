@@ -9,5 +9,6 @@ namespace WebSite.Models
     public class HomeViewModel
     {
         public List<CarouselDto> CarouselItems { get; set; }
+        public List<PhotoDto> PortfolioItems { get; set; } 
     }
 }

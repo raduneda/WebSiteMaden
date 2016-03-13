@@ -27,7 +27,7 @@
             <div class="carousel-inner">
                @foreach (var item in Model.CarouselItems)
                {
-                <div class="item" style="background-image:@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.BackgroundImage))">
+                <div class="item" style="background-image:@Url.Content("~/Content/Images/slider/background/bg1.jpg")">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
@@ -120,25 +120,28 @@
                 </p>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="@Url.Content("~/Content/Images/portfolio/recent/item1.png")" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a>
-                                </h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="@Url.Content("~/Content/Images/portfolio/full/item1.png")" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
+                @*<div class="col-xs-12 col-sm-4 col-md-3">
+        <div class="recent-work-wrap">
+            <img class="img-responsive" src="@Url.Content("~/Content/Images/portfolio/recent/item1.png")" alt="">
+            <div class="overlay">
+                <div class="recent-work-inner">
+                    <h3><a href="#">Business theme</a>
+                    </h3>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                    <a class="preview" href="@Url.Content("~/Content/Images/portfolio/full/item1.png")" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                 </div>
+            </div>
+        </div>
+    </div>*@
+            @foreach (var item in Model.PortfolioItems)
+            {
                 <div class="col-xs-12 col-sm-4 col-md-3">
                     <div class="recent-work-wrap">
-                        <img class="img-responsive" src="@Url.Content("~/Content/Images/portfolio/recent/item2.png")" alt="">
+                        <img class="img-responsive" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.ByteArray))" alt="@item.Name">
                         <div class="overlay">
                             <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a>
+                                <h3>
+                                    <a href="#">Business theme</a>
                                 </h3>
                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
                                 <a class="preview" href="@Url.Content("~/Content/Images/portfolio/full/item2.png")" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
@@ -146,85 +149,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="@Url.Content("~/Content/Images/portfolio/recent/item3.png")" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme </a>
-                                </h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="@Url.Content("~/Content/Images/portfolio/full/item3.png")" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="@Url.Content("~/Content/Images/portfolio/recent/item4.png")" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme </a>
-                                </h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="@Url.Content("~/Content/Images/portfolio/full/item4.png")" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="@Url.Content("~/Content/Images/portfolio/recent/item5.png")" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a>
-                                </h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="@Url.Content("~/Content/Images/portfolio/full/item5.png")" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="@Url.Content("~/Content/Images/portfolio/recent/item6.png")" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme </a>
-                                </h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="@Url.Content("~/Content/Images/portfolio/full/item6.png")" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="@Url.Content("~/Content/Images/portfolio/recent/item7.png")" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme </a>
-                                </h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="@Url.Content("~/Content/Images/portfolio/full/item7.png")" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <img class="img-responsive" src="@Url.Content("~/Content/Images/portfolio/recent/item8.png")" alt="">
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme </a>
-                                </h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="@Url.Content("~/Content/Images/portfolio/full/item8.png")" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            }
             </div><!--/.row-->
         </div><!--/.container-->
     </section><!--/#recent-works-->

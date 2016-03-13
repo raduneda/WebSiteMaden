@@ -19,6 +19,13 @@ namespace BL
             _pathManager = PathManager.Instance;
         }
 
+        public List<PhotoDto> GetRecentImages( int numberOfImages = 8)
+        {
+            List<PhotoDto> photoList = GetPortfolioImages(PhotoEnum.PortfolioImageType.All);
+
+            return photoList.Take(numberOfImages).ToList();
+        }
+
         public List<PhotoDto> GetPortfolioImages( PhotoEnum.PortfolioImageType imageType )
         {
             List<PhotoDto> photoList = new List<PhotoDto>();

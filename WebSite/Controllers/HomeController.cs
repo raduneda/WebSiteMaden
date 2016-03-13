@@ -10,20 +10,26 @@ namespace WebSite.Controllers
 {
     public class HomeController : Controller
     {
-        private CarouselManager _carouselManager;
+        private readonly CarouselManager _carouselManager;
+        private readonly PhotoManager _photoManager;
 
-        public HomeController() : this(null)
+        public HomeController() : this(null,null)
         {
         }
 
-        public HomeController( CarouselManager carouselManager )
+        public HomeController( CarouselManager carouselManager, PhotoManager photoManager )
         {
             _carouselManager = carouselManager ?? new CarouselManager();
+            _photoManager = photoManager ?? new PhotoManager();
         }
 
         public ActionResult Index()
         {
-            HomeViewModel viewModel = new HomeViewModel { CarouselItems = _carouselManager.GetCarouselItems() };
+            HomeViewModel viewModel = new HomeViewModel
+            {
+                CarouselItems = _carouselManager.GetCarouselItems(),
+                PortfolioItems = _photoManager.GetRecentImages()
+            };
             return View("~/Views/Home/Index.cshtml", viewModel);
         }
 
