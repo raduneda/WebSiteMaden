@@ -1,4 +1,6 @@
-﻿@model WebSite.Models.HomeViewModel
+﻿@using TL.Enums
+@using WebSite.Helpers
+@model WebSite.Models.HomeViewModel
 @{
     ViewBag.Title = "Home";
     Layout = "../Shared/_Layout.cshtml";
@@ -137,7 +139,15 @@
             {
                 <div class="col-xs-12 col-sm-4 col-md-3">
                     <div class="recent-work-wrap">
-                        <img class="img-responsive" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.ByteArray))" alt="@item.Name">
+                        @*<img class="img-responsive" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.ByteArray))" alt="@item.Name">*@
+                        @if ( item.Type == PhotoEnum.PortfolioImageType.Creative )
+                        {
+                            <img class="img-responsive" src="@Url.ContentFullPath(string.Concat(@"~/content/images/portfolio/creative/", @item.NameWithExtension))" alt="@item.Name">
+                        }
+                        else
+                        {
+                            <img class="img-responsive" src="@Url.ContentFullPath(string.Concat(@"~/content/images/portfolio/standard/",@item.NameWithExtension))" alt="@item.Name">
+                        }
                         <div class="overlay">
                             <div class="recent-work-inner">
                                 <h3>

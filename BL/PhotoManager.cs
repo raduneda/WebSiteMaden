@@ -19,7 +19,7 @@ namespace BL
             _pathManager = PathManager.Instance;
         }
 
-        public List<PhotoDto> GetRecentImages( int numberOfImages = 8)
+        public List<PhotoDto> GetRecentImages( int numberOfImages = 8 )
         {
             List<PhotoDto> photoList = GetPortfolioImages(PhotoEnum.PortfolioImageType.All);
 
@@ -61,7 +61,8 @@ namespace BL
                             Path = filePath,
                             Name = Path.GetFileNameWithoutExtension(filePath),
                             ByteArray = File.ReadAllBytes(filePath),
-                            Type = itemType
+                            Type = itemType,
+                            NameWithExtension = Path.GetFileName(filePath)
                         })
                     .ToList();
         }
