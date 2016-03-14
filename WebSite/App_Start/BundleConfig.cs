@@ -23,7 +23,10 @@ namespace WebSite
                 "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                "~/Scripts/bootstrap.js",
+                "~/Scripts/bootstrap.js"
+             ));
+
+            bundles.Add(new ScriptBundle("~/bundles/otherjs").Include(
                 "~/Scripts/respond.js",
                 "~/Scripts/html5shiv.js",
                 "~/Scripts/jquery.isotope.min.js",
@@ -33,13 +36,14 @@ namespace WebSite
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 //"~/Content/css/bootstrap.css",
-                "~/Content/css/bootstrap.min.css",
-                "~/Content/css/font-awesome.css",
-                "~/Content/css/responsive.css",
-                "~/Content/css/animate.min.css",
-                "~/Content/css/prettyPhoto.css",
-                "~/Content/css/main.css"));
-                //"~/Content/site.css"
+                "~/Content/css/bootstrap.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/othercss").Include(
+              "~/Content/css/font-awesome.css",
+              "~/Content/css/responsive.css",
+              "~/Content/css/animate.min.css",
+              "~/Content/css/prettyPhoto.css",
+              "~/Content/css/main.css"));
         }
     }
 }

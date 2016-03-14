@@ -34,17 +34,24 @@ namespace BL
 
             for (int i = 1; i <= numberOfItems; i++)
             {
+                string bgImagePath = Path.Combine(_pathManager.SliderBackgroundPath,
+                    string.Concat(BG_PREFIX, i.ToString(),
+                        JPG_EXT));
+                string frontImagePath = Path.Combine(_pathManager.SliderForegroundPath,
+                    string.Concat(FG_PREFIX, i.ToString(),
+                        PNG_EXT));
+                
                 CarouselDto carouselDto = new CarouselDto
                 {
                     BackgroundImage =
-                        File.ReadAllBytes(Path.Combine(_pathManager.SliderBackgroundPath,string.Concat( BG_PREFIX, i.ToString(),
-                            JPG_EXT))),
+                        File.ReadAllBytes(bgImagePath),
                     FrontImage =
-                        File.ReadAllBytes(Path.Combine(_pathManager.SliderForegroundPath,string.Concat( FG_PREFIX, i.ToString(),
-                            PNG_EXT))),
+                        File.ReadAllBytes(frontImagePath),
                     ReadMore = READ_MORE,
                     Title = "Titlu Mare",
-                    Subtitle = "Subtitlu mic"
+                    Subtitle = "Subtitlu mic",
+                    FrontImageName = Path.GetFileName(frontImagePath),
+                    BackgroundImageName = Path.GetFileName(bgImagePath)
                 };
 
                 carouselList.Add(carouselDto);

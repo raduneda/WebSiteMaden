@@ -12,6 +12,9 @@ namespace TL
         public string Subtitle { get; set; }
         public string ReadMore { get; set; }
         public byte[] FrontImage { get; set; }
+        public string FrontImageName { get; set; }
         public byte[] BackgroundImage { get; set; }
+        public string BackgroundImageName { get; set; }
+    
     }
 }

@@ -27,28 +27,45 @@
                 <li data-target="#main-slider" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-               @foreach (var item in Model.CarouselItems)
-               {
-                <div class="item" style="background-image:@Url.Content("~/Content/Images/slider/background/bg1.jpg")">
-                    <div class="container">
-                        <div class="row slide-margin">
-                            <div class="col-sm-6">
-                                <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">@item.Title</h1>
-                                    <h2 class="animation animated-item-2">@item.Subtitle</h2>
-                                    <a class="btn-slide animation animated-item-3">@item.ReadMore</a>
+                @{
+                    bool firstTime = true;
+                    
+                foreach ( var item in Model.CarouselItems )
+                {
+                  @* <div class="item" style="background-image: @string.Concat(" url(content/images/slider/background/", item.BackgroundImageName, ")")">*@
+                    List<string> divClasses = new List<string>();
+                    if (firstTime)
+                    {
+                        divClasses.Add(("item"));
+                        divClasses.Add(("active"));
+                        firstTime = false;
+                    }
+                    else
+                    {
+                        divClasses.Add(("item"));
+                    }
+                    <div class="@string.Join(" ",divClasses)" style="background-image: @string.Concat(" url(", @Url.ContentFullPath(string.Concat("~/content/images/slider/background/", item.BackgroundImageName)), ")")">
+                        <div class="container">
+                            <div class="row slide-margin">
+                                <div class="col-sm-6">
+                                    <div class="carousel-content">
+                                        <h1 class="animation animated-item-1">@item.Title</h1>
+                                        <h2 class="animation animated-item-2">@item.Subtitle</h2>
+                                        <a class="btn-slide animation animated-item-3">@item.ReadMore</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-6 hidden-xs animation animated-item-4">
-                                <div class="slider-img">
-                                    <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.FrontImage))" class="img-responsive">
+                                <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                    <div class="slider-img">
+                                        @*<img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.FrontImage))" class="img-responsive">*@
+                                        <img src="@Url.ContentFullPath(string.Concat("~/content/images/slider/foreground/", item.FrontImageName))" class="img-responsive">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                   <!--/.item-->
-               }
+                     <!--/.item-->
+                }
+            }
             </div><!--/.carousel-inner-->
         </div><!--/.carousel-->
         <a class="prev hidden-xs" href="#main-slider" data-slide="prev">

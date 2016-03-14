@@ -1,4 +1,8 @@
-jQuery(function($) {'use strict',
+jQuery(function($) {
+    'use strict',
+
+    //Set class as active for first element of the slider
+    $(document).ready(function() { $('#main-slider.carousel:first item').addClass('active'); });
 
 	//#main-slider
 	$(function(){
