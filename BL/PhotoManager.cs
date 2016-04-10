@@ -1,8 +1,10 @@
 ﻿#region
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using DL;
 using TL;
 using TL.Enums;
 
@@ -33,11 +35,23 @@ namespace BL
             if ( imageType == PhotoEnum.PortfolioImageType.Standard )
             {
                 photoList = GetDtoFromPath(_pathManager.PortfolioStandardPath, PhotoEnum.PortfolioImageType.Standard);
+
+                foreach ( PhotoDto dto in photoList )
+                {
+                    DatabaseManager dbManager = new DatabaseManager();
+                    dbManager.WriteTest(dto);
+                }
             }
 
             if ( imageType == PhotoEnum.PortfolioImageType.Creative )
             {
                 photoList = GetDtoFromPath(_pathManager.PortfolioCreativePath, PhotoEnum.PortfolioImageType.Creative);
+
+                foreach (PhotoDto dto in photoList)
+                {
+                    DatabaseManager dbManager = new DatabaseManager();
+                    dbManager.WriteTest(dto);
+                }
             }
 
             if ( imageType == PhotoEnum.PortfolioImageType.All )
@@ -62,7 +76,9 @@ namespace BL
                             Name = Path.GetFileNameWithoutExtension(filePath),
                             ByteArray = File.ReadAllBytes(filePath),
                             Type = itemType,
-                            NameWithExtension = Path.GetFileName(filePath)
+                            NameWithExtension = Path.GetFileName(filePath),
+                            Extension = Path.GetExtension(filePath),
+                            CreationDate = DateTime.Now
                         })
                     .ToList();
         }

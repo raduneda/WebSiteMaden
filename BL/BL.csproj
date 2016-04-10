@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DL\DL.csproj">
+      <Project>{49C23E77-6D16-40DE-9A59-EBD86F84FD5E}</Project>
+      <Name>DL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TL\TL.csproj">
       <Project>{B1F5C338-486A-428B-893C-01F84F3D9782}</Project>
       <Name>TL</Name>

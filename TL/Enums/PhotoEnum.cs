@@ -4,9 +4,9 @@
     {
         public enum PortfolioImageType
         {
-            Creative,
-            Standard,
-            All
+            Creative = 1,
+            Standard = 2,
+            All = 3
         }
     }
 }
