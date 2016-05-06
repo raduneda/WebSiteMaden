@@ -36,30 +36,36 @@ namespace BL
             {
                 photoList = GetDtoFromPath(_pathManager.PortfolioStandardPath, PhotoEnum.PortfolioImageType.Standard);
 
-                foreach ( PhotoDto dto in photoList )
-                {
-                    DatabaseManager dbManager = new DatabaseManager();
-                    dbManager.WriteTest(dto);
-                }
+                //foreach ( PhotoDto dto in photoList )
+                //{
+                //    DatabaseManager dbManager = new DatabaseManager();
+                //    dbManager.InsertPhotoDto(dto);
+                //}
             }
 
             if ( imageType == PhotoEnum.PortfolioImageType.Creative )
             {
                 photoList = GetDtoFromPath(_pathManager.PortfolioCreativePath, PhotoEnum.PortfolioImageType.Creative);
 
-                foreach (PhotoDto dto in photoList)
-                {
-                    DatabaseManager dbManager = new DatabaseManager();
-                    dbManager.WriteTest(dto);
-                }
+                //foreach (PhotoDto dto in photoList)
+                //{
+                //    DatabaseManager dbManager = new DatabaseManager();
+                //    dbManager.InsertPhotoDto(dto);
+                //}
             }
 
             if ( imageType == PhotoEnum.PortfolioImageType.All )
             {
-                photoList.AddRange(GetDtoFromPath(_pathManager.PortfolioStandardPath,
-                    PhotoEnum.PortfolioImageType.Standard));
-                photoList.AddRange(GetDtoFromPath(_pathManager.PortfolioCreativePath,
-                    PhotoEnum.PortfolioImageType.Creative));
+                //photoList.AddRange(GetDtoFromPath(_pathManager.PortfolioStandardPath,
+                //    PhotoEnum.PortfolioImageType.Standard));
+                //photoList.AddRange(GetDtoFromPath(_pathManager.PortfolioCreativePath,
+                //    PhotoEnum.PortfolioImageType.Creative));
+
+                //foreach (PhotoDto dto in photoList)
+                //{
+                //    DatabaseManager dbManager = new DatabaseManager();
+                //    dbManager.InsertPhotoDto(dto);
+                //}
             }
 
             return photoList;
