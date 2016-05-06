@@ -66,6 +66,7 @@ namespace BL
                 //    DatabaseManager dbManager = new DatabaseManager();
                 //    dbManager.InsertPhotoDto(dto);
                 //}
+                photoList.AddRange( new DatabaseManager().GetPhotoDtoList());
             }
 
             return photoList;
