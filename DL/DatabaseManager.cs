@@ -69,10 +69,7 @@ namespace DL
                         CreationDate = Convert.ToDateTime(reader.GetValue(reader.GetOrdinal(PHOTO_DATE_))),
                         Extension = reader.GetValue(reader.GetOrdinal(PHOTO_EXTENSION_)).ToString(),
                         Path = reader.GetValue(reader.GetOrdinal(PHOTO_PATH_)).ToString(),
-                        Type =
-                            reader.GetValue(reader.GetOrdinal(PHOTO_TYPE_)) is PhotoEnum.PortfolioImageType
-                                ? (PhotoEnum.PortfolioImageType) reader.GetValue(reader.GetOrdinal(PHOTO_TYPE_))
-                                : 0
+                        Type = (PhotoEnum.PortfolioImageType) Convert.ToInt16(reader.GetValue(reader.GetOrdinal(PHOTO_TYPE_))) 
                     };
                     photoDtoList.Add(photoDto);
                 }

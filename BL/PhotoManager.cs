@@ -1,8 +1,6 @@
 ﻿#region
 
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using DL;
 using TL;
@@ -14,12 +12,12 @@ namespace BL
 {
     public class PhotoManager : BaseManager
     {
-        private readonly PathManager _pathManager;
+        //private readonly PathManager _pathManager;
 
-        public PhotoManager()
-        {
-            _pathManager = PathManager.Instance;
-        }
+        //public PhotoManager()
+        //{
+        //    //_pathManager = PathManager.Instance;
+        //}
 
         public List<PhotoDto> GetRecentImages( int numberOfImages = 8 )
         {
@@ -34,10 +32,13 @@ namespace BL
 
             if ( imageType == PhotoEnum.PortfolioImageType.Standard )
             {
-                photoList = GetDtoFromPath(_pathManager.PortfolioStandardPath, PhotoEnum.PortfolioImageType.Standard);
+                photoList.AddRange(
+                    new DatabaseManager().GetPhotoDtoList()
+                        .Where(item => item.Type == PhotoEnum.PortfolioImageType.Standard));
 
-                //foreach ( PhotoDto dto in photoList )
+                //foreach (PhotoDto dto in photoList)
                 //{
+                //    dto.Path = _pathManager.TrimPathUntilContentDirectory(dto.Path);
                 //    DatabaseManager dbManager = new DatabaseManager();
                 //    dbManager.InsertPhotoDto(dto);
                 //}
@@ -45,10 +46,15 @@ namespace BL
 
             if ( imageType == PhotoEnum.PortfolioImageType.Creative )
             {
-                photoList = GetDtoFromPath(_pathManager.PortfolioCreativePath, PhotoEnum.PortfolioImageType.Creative);
+                //photoList = GetDtoFromPath(_pathManager.PortfolioCreativePath, PhotoEnum.PortfolioImageType.Creative);
+                photoList.AddRange(
+                    new DatabaseManager().GetPhotoDtoList()
+                        .Where(item => item.Type == PhotoEnum.PortfolioImageType.Creative));
 
                 //foreach (PhotoDto dto in photoList)
                 //{
+
+                //    dto.Path = _pathManager.TrimPathUntilContentDirectory(dto.Path);
                 //    DatabaseManager dbManager = new DatabaseManager();
                 //    dbManager.InsertPhotoDto(dto);
                 //}
@@ -66,28 +72,10 @@ namespace BL
                 //    DatabaseManager dbManager = new DatabaseManager();
                 //    dbManager.InsertPhotoDto(dto);
                 //}
-                photoList.AddRange( new DatabaseManager().GetPhotoDtoList());
+                photoList.AddRange(new DatabaseManager().GetPhotoDtoList());
             }
 
             return photoList;
-        }
-
-        private List<PhotoDto> GetDtoFromPath( string path, PhotoEnum.PortfolioImageType itemType )
-        {
-            return
-                Directory.GetFiles(path)
-                    .Select(
-                        filePath => new PhotoDto
-                        {
-                            Path = filePath,
-                            Name = Path.GetFileNameWithoutExtension(filePath),
-                            ByteArray = File.ReadAllBytes(filePath),
-                            Type = itemType,
-                            NameWithExtension = Path.GetFileName(filePath),
-                            Extension = Path.GetExtension(filePath),
-                            CreationDate = DateTime.Now
-                        })
-                    .ToList();
         }
     }
 }

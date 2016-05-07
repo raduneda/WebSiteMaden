@@ -34,6 +34,9 @@ namespace WebSite
                 "~/Scripts/respond.min.js",
                 "~/Scripts/wow.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/own").Include(
+             "~/Scripts/main.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 //"~/Content/css/bootstrap.css",
                 "~/Content/css/bootstrap.min.css"));
